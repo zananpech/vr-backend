@@ -17,7 +17,7 @@ public class AuthController {
   @Autowired
   UserService userService;
 
-  @GetMapping("/login")
+  @PostMapping("/login")
   public ResponseEntity<?> login(@RequestBody final LoginRequestDto loginRequestDto) {
 
     Optional<User> user = userService.findUserByEmail(loginRequestDto.getEmail());
