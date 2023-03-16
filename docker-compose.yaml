@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:14.2-alpine
+    container_name: vr-postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: vr
+      POSTGRES_USER: vr
+      POSTGRES_DB: vr-postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_HOST: postgres
+
+  backend:
+    image: maven:3.8.3-openjdk-11
+    container_name: vr-backend
+    command: mvn clean spring-boot:run
+    volumes:
+      - ./:/home/vr-backend
+      - vr-backend-maven-repo-data:/root/.m2
+    working_dir: /home/vr-backend
+    environment:
+      POSTGRES_USER: vr
+      POSTGRES_PASSWORD: vr
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: vr-postgres
+      POSTGRES_HOST: postgres
+    ports:
+      - "8081:8081"
+    depends_on:
+      - postgres
+
+volumes:
+  postgres-data:
+  vr-backend-maven-repo-data:
