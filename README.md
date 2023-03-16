@@ -1,4 +1,4 @@
-# vr-shop-backend
+# Virtual Reality shop backend
 
 ## Docker compose and run
 
