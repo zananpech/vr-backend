@@ -15,4 +15,6 @@ It executes the following services:
 
 ## Swagger UI (API)
 
+For testing API endpoints
+
 [http://localhost:8081/swagger-ui/index.html](http://localhost:8081/swagger-ui/index.html)
