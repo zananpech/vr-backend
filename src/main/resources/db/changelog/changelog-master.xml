@@ -4,7 +4,9 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
-    <include file="/create-user.xml" relativeToChangelogFile="true" />
-    <include file="/insert-user-data.xml" relativeToChangelogFile="true" />
-    <include file="/create-product.xml" relativeToChangelogFile="true" />
+    <include file="create/create-user.xml" relativeToChangelogFile="true" />
+    <include file="create/create-product.xml" relativeToChangelogFile="true" />
+    <include file="create/create-purchase-info.xml" relativeToChangelogFile="true" />
+    <include file="data/insert-user-data.xml" relativeToChangelogFile="true" />
+    <include file="data/insert-product-data.xml" relativeToChangelogFile="true" />
 </databaseChangeLog>
