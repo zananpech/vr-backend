@@ -23,4 +23,7 @@ public class Product extends BaseEntity{
 
   @NotNull
   private String description;
+
+  @NotNull
+  private String imageSrc;
 }

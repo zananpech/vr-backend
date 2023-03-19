@@ -21,19 +21,14 @@ public class User extends BaseEntity{
   private String email;
 
   @NotNull
-  @Column(name = "password")
   private String password;
 
   @NotNull
-  @Column(name = "first_name")
   private String firstName;
 
   @NotNull
-  @Column(name = "last_name")
   private String lastName;
 
   @NotNull
-  @Column(name = "address")
   private String address;
-
 }
