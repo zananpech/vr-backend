@@ -11,12 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table
-public class Product {
-
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  @Column(name = "id", nullable = false)
-  private Long id;
+public class Product extends BaseEntity{
 
   @Column(name = "type", nullable = false)
   private String type;
