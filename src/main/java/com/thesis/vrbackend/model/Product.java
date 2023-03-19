@@ -4,7 +4,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
@@ -13,7 +15,12 @@ import javax.persistence.*;
 @Table
 public class Product extends BaseEntity{
 
-  @Column(name = "type", nullable = false)
-  private String type;
+  @NotNull
+  private String name;
 
+  @NotNull
+  private String price;
+
+  @NotNull
+  private String description;
 }
