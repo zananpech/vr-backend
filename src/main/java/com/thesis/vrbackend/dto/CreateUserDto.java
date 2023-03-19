@@ -1,4 +1,4 @@
-package com.thesis.vrbackend.model;
+package com.thesis.vrbackend.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,12 +8,10 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
-@Entity
 @Getter
 @Setter
-@Table(name = "user_")
 @NoArgsConstructor
-public class User extends BaseEntity{
+public class CreateUserDto {
 
   @NotNull
   @Email

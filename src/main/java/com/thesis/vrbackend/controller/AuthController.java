@@ -1,7 +1,9 @@
 package com.thesis.vrbackend.controller;
 
+import com.thesis.vrbackend.dto.CreateUserDto;
 import com.thesis.vrbackend.dto.LoginRequestDto;
 import com.thesis.vrbackend.model.User;
+import com.thesis.vrbackend.util.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +21,6 @@ public class AuthController {
 
   @PostMapping("/login")
   public ResponseEntity<?> login(@RequestBody final LoginRequestDto loginRequestDto) {
-
     Optional<User> user = userService.findUserByEmail(loginRequestDto.getEmail());
     if (user.isPresent() && user.get().getPassword().equals(loginRequestDto.getPassword())) {
       return ResponseEntity.status(HttpStatus.OK).body(user.get());
@@ -28,9 +29,8 @@ public class AuthController {
   }
 
   @PostMapping("/register")
-  public ResponseEntity<?> register(@RequestBody final User user) {
-//    System.out.println(dto);
-    User createdUser = userService.createUser(user);
+  public ResponseEntity<?> register(@RequestBody final CreateUserDto createUserDto) {
+    User createdUser = userService.createUser(Mapper.createUserDtoToUser(createUserDto));
     return ResponseEntity.status(HttpStatus.OK).body(createdUser);
   }
 }
