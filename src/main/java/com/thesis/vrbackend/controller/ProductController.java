@@ -1,5 +1,6 @@
 package com.thesis.vrbackend.controller;
 
+import com.thesis.vrbackend.dto.CreateProductDto;
 import com.thesis.vrbackend.dto.PurchaseInfoDto;
 import com.thesis.vrbackend.model.Product;
 import com.thesis.vrbackend.model.PurchaseInfo;
@@ -34,4 +35,9 @@ public class ProductController {
     return ResponseEntity.ok(purchaseInfo.get());
   }
 
+  @PostMapping("/add")
+  public ResponseEntity<CreateProductDto> addProduct(@RequestBody CreateProductDto createProductDto) {
+    productService.addProduct(createProductDto);
+    return ResponseEntity.ok(createProductDto);
+  }
 }
