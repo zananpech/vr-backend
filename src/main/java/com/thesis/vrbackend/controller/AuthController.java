@@ -25,7 +25,7 @@ public class AuthController {
     if (user.isPresent() && user.get().getPassword().equals(loginRequestDto.getPassword())) {
       return ResponseEntity.status(HttpStatus.OK).body(true);
     }
-    return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+    return  ResponseEntity.status(HttpStatus.OK).body(false);
   }
 
   @PostMapping("/register")
