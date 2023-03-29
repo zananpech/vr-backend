@@ -22,8 +22,11 @@ public class PurchaseInfo extends BaseEntity{
   private Long productId;
 
   @NotNull
-  private String price;
+  private int price;
 
   @NotNull
   private String productName;
+
+  @NotNull
+  private int quantity;
 }

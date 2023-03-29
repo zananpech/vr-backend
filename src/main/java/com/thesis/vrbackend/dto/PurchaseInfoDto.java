@@ -17,5 +17,8 @@ public class PurchaseInfoDto {
   @NotNull
   Long userId;
 
+  @NotNull
+  int quantity;
+
 }
 

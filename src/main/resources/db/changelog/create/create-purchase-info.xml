@@ -13,7 +13,7 @@
             <column name="product_name" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="price" type="VARCHAR(255)">
+            <column name="price" type="int">
                 <constraints nullable="false"/>
             </column>
             <column name="user_id" type="BIGINT">
@@ -23,5 +23,16 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
+    </changeSet>
+    <changeSet author="liquibase-docs" id="addColumn-example">
+        <addColumn
+                schemaName="public"
+                tableName="purchase_info">
+            <column
+                    name="quantity"
+                    type="int">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
     </changeSet>
 </databaseChangeLog>

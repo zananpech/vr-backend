@@ -28,6 +28,7 @@ public class PurchaseInfoService {
     purchaseInfo.setProductName(product.get().getName());
     purchaseInfo.setPrice(product.get().getPrice());
     purchaseInfo.setUserId(purchaseInfoDto.getUserId());
+    purchaseInfo.setQuantity(purchaseInfo.getQuantity());
 
     return Optional.of(purchaseInfoRepo.save(purchaseInfo));
   }

@@ -7,20 +7,20 @@
     <changeSet author="admin" id="insert_product_data">
         <insert tableName="product">
             <column name="name" value="LG 55 inch TV"/>
-            <column name="price" value="HUF 175,890"/>
+            <column name="price" value="175890"/>
             <column name="description" value="True 4K UHD. It is incredibly captivating
                     LG UHD TVs exceed your expectations every time. With four times more pixels than Full HD resolution, you can experience realistic image quality and vivid colors."/>
             <column name="image_src" value="/images/LG 55 Inch TV.webp" />
         </insert>
         <insert tableName="product">
             <column name="name" value="LG 40 inch TV"/>
-            <column name="price" value="HUF 368,090"/>
+            <column name="price" value="368090"/>
             <column name="description" value="Television - SMART OLED, 4K Ultra HD, 100Hz, HDR10, HLG, DVB-T2/S2/C, H.265/HEVC, 4× HDMI, 3× USB, CI+, recording to USB, LAN, WiFi, Bluetooth, DLNA, Miracast, HbbTV 2.0, gamer mode."/>
             <column name="image_src" value="/images/LG 42 Inch TV.webp" />
         </insert>
         <insert tableName="product">
             <column name="name" value="Talbot 120 x 60 cm"/>
-            <column name="price" value="HUF 76,074"/>
+            <column name="price" value="76074"/>
             <column name="description" value="Talbot melamine desk with natural finish, and legs in a black finish, 120 x 60 cm"/>
             <column name="image_src" value="/images/ikea table.avif" />
         </insert>

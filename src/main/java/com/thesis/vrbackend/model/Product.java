@@ -19,7 +19,7 @@ public class Product extends BaseEntity{
   private String name;
 
   @NotNull
-  private String price;
+  private int price;
 
   @NotNull
   private String description;

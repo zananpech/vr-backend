@@ -23,9 +23,9 @@ public class AuthController {
   public ResponseEntity<?> login(@RequestBody final LoginRequestDto loginRequestDto) {
     Optional<User> user = userService.findUserByEmail(loginRequestDto.getEmail());
     if (user.isPresent() && user.get().getPassword().equals(loginRequestDto.getPassword())) {
-      return ResponseEntity.status(HttpStatus.OK).body(true);
+      return ResponseEntity.status(HttpStatus.OK).body(user.get().getId());
     }
-    return  ResponseEntity.status(HttpStatus.OK).body(false);
+    return  ResponseEntity.status(HttpStatus.OK).body(0);
   }
 
   @PostMapping("/register")
